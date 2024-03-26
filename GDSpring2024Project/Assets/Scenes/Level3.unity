@@ -1275,7 +1275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3755580302121062879, guid: 80db2f1f83d71514e97081a27b22b14e, type: 3}
       propertyPath: sightDistance
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3755580302121062879, guid: 80db2f1f83d71514e97081a27b22b14e, type: 3}
       propertyPath: targetCreature
