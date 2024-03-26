@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PressurePlate : MonoBehaviour
 {
     public int sceneBuildIndex;
-    [SerializeField] InventoryHandler.AllItems requiredItems;
+    [SerializeField] List<InventoryHandler.AllItems> requiredItems;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Pressure plate was triggered.");
         //GetComponent<SpriteRenderer>().color = Color.blue;
         //other.GetComponent<SpriteRenderer>().color = Color.red;
-        if(RequiredItems(requiredItems)) 
+        if(RequiredItemsCollected()) 
         {
             if (other.tag == "Player")
             {
@@ -26,15 +27,18 @@ public class PressurePlate : MonoBehaviour
     //{
         //GetComponent<SpriteRenderer>().color = Color.white;
     //}
-    public bool RequiredItems(InventoryHandler.AllItems requiredItems) 
+    public bool RequiredItemsCollected() 
     {
-        if (InventoryHandler.Instance.inventoryItems.Contains(requiredItems))
+        int collectedCount = 0;
+
+        foreach (InventoryHandler.AllItems requiredItem in requiredItems)
         {
-            return true;
+            if (InventoryHandler.Instance.inventoryItems.Contains(requiredItem))
+            {
+                collectedCount++;
+            }
         }
-        else
-        {
-            return false;
-        }
+
+        return collectedCount >= 3;
     }
 }

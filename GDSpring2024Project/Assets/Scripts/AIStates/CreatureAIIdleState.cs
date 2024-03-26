@@ -21,6 +21,6 @@ public class CreatureAIIdleState : CreatureAIState
 
     public override void BeginState()
     {
-        creatureAI.myCreature.GetComponent<SpriteRenderer>().color = Color.white;
+        creatureAI.myCreature.GetComponent<SpriteRenderer>();
     }
 }

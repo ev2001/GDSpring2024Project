@@ -3,6 +3,7 @@ using System.Collections.Generic;
 //using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class Creature : MonoBehaviour
@@ -12,6 +13,7 @@ public class Creature : MonoBehaviour
     public float speed = 0f;
     [SerializeField] int health = 3;
     [SerializeField] int stamina = 3;
+    // private int currentLives; // Current number of lives
 
     public enum CreatureMovementType {tf, physics};
     [SerializeField] CreatureMovementType movementType = CreatureMovementType.tf;
@@ -23,7 +25,7 @@ public class Creature : MonoBehaviour
 
     [Header("Tracked Data")]
     [SerializeField] Vector3 homePosition = Vector3.zero;
-    [SerializeField] CreatureSO creatureSO;
+    public CreatureSO creatureSO;
 
     //[SerializeField] GameObject box;
 
@@ -37,12 +39,26 @@ public class Creature : MonoBehaviour
     //Start is called before the first frame update
     void Start()
     {
-
+        //currentLives = 2;
         Debug.Log(health);
 
         //  SpriteRenderer sr = box.GetComponent<SpriteRenderer>();
         //  sr.color = Color.black;
     }
+
+    // public void DecreaseLives(int amount)
+    // {
+    //     currentLives -= amount;
+    //     if (currentLives <= 0) 
+    //     {
+    //         RespawnOrMainMenu();
+    //     }
+    // }
+
+    // private void RespawnOrMainMenu()
+    // {
+    //     SceneManager.LoadScene("MainMenu");
+    // }
 
     //Update is called once per frame
     void Update()

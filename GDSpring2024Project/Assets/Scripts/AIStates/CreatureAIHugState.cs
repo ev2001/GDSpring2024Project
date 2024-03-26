@@ -10,7 +10,7 @@ public class CreatureAIHugState : CreatureAIState
 
     public override void BeginState()
     {
-        creatureAI.SetColor(Color.red);
+        //creatureAI.SetColor(Color.red);
     }
 
     public override void UpdateState()
@@ -20,6 +20,11 @@ public class CreatureAIHugState : CreatureAIState
         }else{
             creatureAI.ChangeState(creatureAI.investigateState);
         }
+        // Collider2D playerCollider = Physics2D.OverlapCircle(creatureAI.transform.position, 1f);
+        // if  (playerCollider != null && playerCollider.CompareTag("Player"))
+        // {
+        //     playerCollider.GetComponent<Creature>().DecreaseLives(1);
+        // }
 
     }
 }
