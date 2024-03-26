@@ -517,7 +517,7 @@ Transform:
   m_GameObject: {fileID: 650784157}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.73, y: -3, z: 0}
+  m_LocalPosition: {x: 6.68, y: -0.88, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1289,13 +1289,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: GhostSchoolGirl
       objectReference: {fileID: 0}
+    - target: {fileID: 7618179407732359003, guid: 80db2f1f83d71514e97081a27b22b14e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8098584497100451183, guid: 80db2f1f83d71514e97081a27b22b14e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.74
+      value: 6.72
       objectReference: {fileID: 0}
     - target: {fileID: 8098584497100451183, guid: 80db2f1f83d71514e97081a27b22b14e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.95
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 8098584497100451183, guid: 80db2f1f83d71514e97081a27b22b14e, type: 3}
       propertyPath: m_LocalPosition.z

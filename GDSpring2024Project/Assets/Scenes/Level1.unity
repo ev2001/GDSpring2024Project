@@ -1289,6 +1289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GhostSchoolGirl
       objectReference: {fileID: 0}
+    - target: {fileID: 7618179407732359003, guid: 80db2f1f83d71514e97081a27b22b14e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8098584497100451183, guid: 80db2f1f83d71514e97081a27b22b14e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.96
