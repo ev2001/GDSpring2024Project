@@ -892,6 +892,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4193339575228493084, guid: 80db2f1f83d71514e97081a27b22b14e, type: 3}
+      propertyPath: homePosition.x
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193339575228493084, guid: 80db2f1f83d71514e97081a27b22b14e, type: 3}
+      propertyPath: homePosition.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7618179407732359003, guid: 80db2f1f83d71514e97081a27b22b14e, type: 3}
       propertyPath: m_Name
       value: PlayerCharacter

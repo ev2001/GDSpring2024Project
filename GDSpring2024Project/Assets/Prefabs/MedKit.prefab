@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.47, y: -3.11, z: -0.38836575}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthValue: 1
+  pickupSound: {fileID: 8300000, guid: 8d189f221c8f7924d8e56eb27debb3c5, type: 3}
 --- !u!114 &1241894274338178852
 MonoBehaviour:
   m_ObjectHideFlags: 0

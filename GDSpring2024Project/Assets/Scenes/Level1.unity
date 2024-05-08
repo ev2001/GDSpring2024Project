@@ -6601,25 +6601,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1751114253777750676, guid: 6765f7acef8efd24aa098e872dd202e7, type: 3}
-      propertyPath: pickupSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 8d189f221c8f7924d8e56eb27debb3c5, type: 3}
     - target: {fileID: 3721856017866773347, guid: 6765f7acef8efd24aa098e872dd202e7, type: 3}
       propertyPath: m_Name
       value: MedKit
-      objectReference: {fileID: 0}
-    - target: {fileID: 7061950951875505892, guid: 6765f7acef8efd24aa098e872dd202e7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7061950951875505892, guid: 6765f7acef8efd24aa098e872dd202e7, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7061950951875505892, guid: 6765f7acef8efd24aa098e872dd202e7, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7061950951875505892, guid: 6765f7acef8efd24aa098e872dd202e7, type: 3}
       propertyPath: m_LocalPosition.x
