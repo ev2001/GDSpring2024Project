@@ -29,6 +29,10 @@ public class PlayerInputHandler : MonoBehaviour
             input.x += 1;
         }
 
+        if(Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftShift)) {
+            PlayerCreatutre.StartSprinting();
+        }
+
         PlayerCreatutre.MoveCreature(input);
     }
 }

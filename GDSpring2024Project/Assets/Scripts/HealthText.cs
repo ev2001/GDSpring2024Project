@@ -12,13 +12,19 @@ public class HealthText : MonoBehaviour
 
     public void Update()
     {
-        if (PlayerCharacter != null && PlayerCharacter.creatureSO != null) 
-        {
-            healthText.text = "LIVES " + PlayerCharacter.creatureSO.health.ToString();   
+        if(PlayerCharacter != null) {
+            healthText.text = "LIVES " + PlayerCharacter.health.ToString();
         }
-        else
-        {
+        else{
             healthText.text = "LIVES ";
         }
+        //if (PlayerCharacter != null && PlayerCharacter.creatureSO != null) 
+        //{
+            //healthText.text = "LIVES " + PlayerCharacter.creatureSO.health.ToString();   
+        //}
+        //else
+        //{
+            //healthText.text = "LIVES ";
+        //}
     }
 }

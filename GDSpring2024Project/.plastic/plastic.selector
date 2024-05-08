@@ -1,0 +1,4 @@
+repository "GDSpring2024Project@GOJIRA_2001@cloud"
+  path "/"
+    br "/main"
+    co "/main"

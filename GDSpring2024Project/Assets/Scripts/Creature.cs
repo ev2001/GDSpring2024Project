@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+
 //using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -9,10 +11,16 @@ using UnityEngine.SceneManagement;
 public class Creature : MonoBehaviour
 {
     [Header("Stats")]
+    //public float speed = 0f;
     //[SerializeField] int health = 3;
-    public float speed = 0f;
-    [SerializeField] int health = 3;
-    [SerializeField] int stamina = 3;
+    public float speed = 3f;
+    public float sprintSpeed = 4f;
+    private bool isSprinting = false;
+    public int health = 3;
+    //[SerializeField] int stamina = 3;
+    [SerializeField] private int stamina = 100;
+    [SerializeField] private float staminaRecoveryRate = 2f;
+    [SerializeField] private float staminaDepletionRate = 1f;
     // private int currentLives; // Current number of lives
 
     public enum CreatureMovementType {tf, physics};
@@ -46,20 +54,6 @@ public class Creature : MonoBehaviour
         //  sr.color = Color.black;
     }
 
-    // public void DecreaseLives(int amount)
-    // {
-    //     currentLives -= amount;
-    //     if (currentLives <= 0) 
-    //     {
-    //         RespawnOrMainMenu();
-    //     }
-    // }
-
-    // private void RespawnOrMainMenu()
-    // {
-    //     SceneManager.LoadScene("MainMenu");
-    // }
-
     //Update is called once per frame
     void Update()
     {
@@ -67,6 +61,7 @@ public class Creature : MonoBehaviour
             creatureSO.health = health;
             creatureSO.stamina = stamina;
         }
+        HandleStamina();
     }
 
     void FixedUpdate(){
@@ -124,5 +119,50 @@ public class Creature : MonoBehaviour
     public void MoveCreatureTransform(Vector3 direction)
     {
         transform.position += direction * Time.deltaTime *speed;
+    }
+
+    public void DecreaseLives(int amount)
+    {
+        health -= amount;
+        if(health <= 0){
+            RespawnOrMainMenu();
+        }
+        else{
+            transform.position = homePosition;
+        }
+    }
+
+    private void RespawnOrMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void IncreaseHealth(int amount)
+    {
+        health += amount;
+    }
+
+    private void HandleStamina() {
+        if(isSprinting && stamina > 0) {
+            stamina -= (int)(staminaDepletionRate * Time.deltaTime);
+            speed = sprintSpeed;
+        } else {
+            speed = 1f;
+            stamina += (int)(staminaRecoveryRate * Time.deltaTime);
+            stamina = Mathf.Clamp(stamina, 0, 100);
+        }
+        isSprinting = false;
+    }
+
+    public void StartSprinting() {
+        if(stamina > 0) {
+            //isSprinting = true;
+            speed = sprintSpeed;
+            stamina--;
+        }
+    }
+
+    public void StopSprinting(){
+        speed = 1f;
     }
 }

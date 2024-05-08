@@ -26,14 +26,10 @@ public class CreatureAI : MonoBehaviour
     public CreatureAIPatrolState patrolState{get; private set;}
     public CreatureAIInvestigateState investigateState{get; private set;}
 
-
     public void ChangeState(CreatureAIState newState){
-
         currentState = newState;
-
         currentState.BeginStateBase();
     }
-
 
     // Start is called before the first frame update
     void Start()
@@ -123,6 +119,4 @@ public class CreatureAI : MonoBehaviour
         GetMoveCommand(targetCreature.transform.position, ref path);
 
     }
-
-
 }
